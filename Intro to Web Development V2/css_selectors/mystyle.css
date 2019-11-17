@@ -1,0 +1,32 @@
+/*no dot is a literal tag selector
+Applies to all h1 tags by default unless overwritten by a class selector*/
+h1 {
+    color: red;
+}
+
+/*dot in front is a class selector
+classes are more specific than tag, in style cascade where an attribute like color is set in both,
+class attributes will be prioritised*/
+.branding {
+    font-size: 60px;
+}
+
+.branding-color {
+    color: aqua;
+}
+
+/*ID selector
+avoid using these in conjunction with classes, generally avoid using ID styling*/
+#site-brand {
+    color: brown;
+}
+
+/*default for hover-example class
+colon specifies state of object, in this case on hover apply attributes*/
+.hover-example {
+    background-color: limegreen;
+    color: white;
+}
+.hover-example:hover {
+    background-color: crimson;
+}
