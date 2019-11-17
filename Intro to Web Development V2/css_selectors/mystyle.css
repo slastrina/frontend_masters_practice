@@ -30,3 +30,10 @@ colon specifies state of object, in this case on hover apply attributes*/
 .hover-example:hover {
     background-color: crimson;
 }
+
+/*Wildcard selector, has lowest selector priority but will set everything with this
+
+border-box is the only accepted wildcard item, border-box > content-box*/
+* {
+    box-sizing: border-box;
+}
