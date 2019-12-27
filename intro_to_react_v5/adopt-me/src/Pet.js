@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Pet({ name, animal, breed }) {
-  const x = name.toUpperCase(name)
+  const x = name.toUpperCase(name);
 
   return (
     <div>
