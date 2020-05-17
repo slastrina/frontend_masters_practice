@@ -1,15 +1,22 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-const ColorBox = (props) => {
+const ColorBox = props => {
   const colorStyle = {
-    backgroundColor: props.colorHex,
+    backgroundColor: props.hexCode,
+  };
+
+  const textStyle = {
+    color:
+      parseInt(props.hexCode.replace('#', ''), 16) > 0xffffff / 1.1
+        ? 'black'
+        : 'white',
   };
 
   return (
     <View style={[styles.box, colorStyle]}>
-      <Text style={styles.text}>
-        {props.colorName} {props.colorHex}
+      <Text style={[styles.text, textStyle]}>
+        {props.colorName} {props.hexCode}
       </Text>
     </View>
   );
