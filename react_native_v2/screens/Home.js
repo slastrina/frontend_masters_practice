@@ -10,7 +10,8 @@ import PalettePreview from '../components/PalettePreview';
 
 const URL = 'https://color-palette-api.kadikraman.now.sh/palettes';
 
-const Home = ({ navigation }) => {
+const Home = ({ navigation, route }) => {
+  const newPalette = route.params ? route.params.newPalette : null;
   const [palettes, setPalettes] = useState([]);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
@@ -34,6 +35,12 @@ const Home = ({ navigation }) => {
     }, 1000);
   });
 
+  useEffect(() => {
+    if (newPalette) {
+      setPalettes(current => [newPalette, ...current]);
+    }
+  }, [newPalette]);
+
   return (
     <>
       <TouchableOpacity
@@ -48,7 +55,7 @@ const Home = ({ navigation }) => {
         keyExtractor={item => item.paletteName}
         renderItem={({ item }) => (
           <PalettePreview
-            onPress={() => navigation.push('AddNewPalette', item)}
+            onPress={() => navigation.push('ColorPalette', item)}
             palette={item}
           />
         )}
