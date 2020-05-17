@@ -1,29 +1,49 @@
-// App.js
-
 import React from 'react';
-import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
+import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
+import ColorBox from './components/ColorBox';
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={[styles.container, styles.pink]}>
-        <Text>Hello, world!</Text>
+    <SafeAreaView>
+      <View style={styles.container}>
+        <Text style={styles.heading}>
+          Here are some boxes of different colours
+        </Text>
+        <ColorBox colorName="Cyan" colorHex="#2aa198" />
       </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  pink: {
-    backgroundColor: 'pink',
-  },
   container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
+    paddingTop: 50,
+    paddingHorizontal: 10,
   },
-  safeArea: {
-    flex: 2,
+  heading: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  text: {
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  cyanBox: {
+    padding: 10,
+    borderRadius: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    backgroundColor: '#2aa198',
+  },
+  blueBox: {
+    padding: 10,
+    borderRadius: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    backgroundColor: '#268bd2',
   },
 });
 
